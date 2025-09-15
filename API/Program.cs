@@ -31,7 +31,7 @@ bool IsValidEmail(string email)
 // Get /users - Listar usuarios
 app.MapGet("/users", () => users)
 .WithName("GetUsers")
-.WithTags("Usuerios");
+.WithTags("Usuarios");
 
 // POST /users - Crear usuario
 app.MapPost("/users", (UserDto dto) =>
@@ -54,7 +54,7 @@ app.MapDelete("/users/{id}", (int id) =>
 {
     var user = users.FirstOrDefault(u => u.Id == id);
     if (user == null)
-        return Results.NotFound();
+        return Results.NotFound(new { message = "No existe un usuario con ese id" });
 
     users.Remove(user);
     return Results.NoContent();
