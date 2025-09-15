@@ -93,3 +93,14 @@ Puedes probar todos los endpoints desde Swagger sin necesidad de Postman.
 ## Autor
 
 Agustín Leonardi
+
+## Mejoras y escalabilidad
+
+Si el proyecto creciera o requiriera mayor mantenibilidad, se recomienda aplicar una arquitectura por capas, separando responsabilidades en:
+
+- **Controladores:** Definen los endpoints y gestionan las peticiones HTTP.
+- **Servicios:** Contienen la lógica de negocio (validaciones, reglas, etc.).
+- **Repositorios:** Gestionan el acceso a los datos (en memoria, base de datos, etc.).
+- **Modelos y DTOs:** Definen las estructuras de datos y los objetos de transferencia.
+
+Esta separación facilita el mantenimiento, las pruebas y la escalabilidad del proyecto. En este reto, se utiliza Minimal API y lógica en memoria por simplicidad, pero la estructura propuesta es ideal para proyectos más grandes y profesionales.

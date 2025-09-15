@@ -1,8 +1,8 @@
 
 namespace API.Models;
-/// <sumary>
+/// <summary>
 /// Representa un usuario en la API
-/// <sumary>
+/// </summary>
 public class User
 {
     public int Id { get; private set; }

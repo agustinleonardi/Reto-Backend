@@ -37,10 +37,10 @@ app.MapGet("/users", () => users)
 app.MapPost("/users", (UserDto dto) =>
 {
     if (string.IsNullOrWhiteSpace(dto.Name) || string.IsNullOrWhiteSpace(dto.Email))
-        return Results.BadRequest("Nombre y email son requeridos.");
+        return Results.BadRequest(new { message = "Nombre y email son requeridos" });
 
     if (!IsValidEmail(dto.Email))
-        return Results.BadRequest("Email inválido.");
+        return Results.BadRequest(new { message = "Email inválido." });
 
     var user = new User(nextId++, dto.Name, dto.Email);
     users.Add(user);
