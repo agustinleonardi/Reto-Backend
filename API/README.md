@@ -96,11 +96,11 @@ Agustín Leonardi
 
 ## Mejoras y escalabilidad
 
-Si el proyecto creciera o requiriera mayor mantenibilidad, se recomienda aplicar una arquitectura por capas, separando responsabilidades en:
+Si el proyecto creciera o requiriera mayor mantenibilidad, se recomienda aplicar una arquitectura basada en Clean Architecture, que separa responsabilidades en capas bien definidas:
 
-- **Controladores:** Definen los endpoints y gestionan las peticiones HTTP.
-- **Servicios:** Contienen la lógica de negocio (validaciones, reglas, etc.).
-- **Repositorios:** Gestionan el acceso a los datos (en memoria, base de datos, etc.).
-- **Modelos y DTOs:** Definen las estructuras de datos y los objetos de transferencia.
+- **Capa de Presentación (Controllers/API):** Expone los endpoints HTTP y gestiona las peticiones externas.
+- **Capa de Aplicación (Use Cases/Services):** Contiene la lógica de negocio y los casos de uso de la aplicación.
+- **Capa de Dominio (Entities/Models):** Define las entidades centrales y las reglas de negocio independientes de frameworks.
+- **Capa de Infraestructura (Repositories/Data):** Gestiona el acceso a los datos, integración con bases de datos, servicios externos, etc.
 
-Esta separación facilita el mantenimiento, las pruebas y la escalabilidad del proyecto. En este reto, se utiliza Minimal API y lógica en memoria por simplicidad, pero la estructura propuesta es ideal para proyectos más grandes y profesionales.
+Esta arquitectura facilita el mantenimiento, la escalabilidad, las pruebas y la independencia tecnológica. En este reto se utiliza Minimal API y lógica en memoria por simplicidad, pero Clean Architecture es ideal para proyectos más grandes y profesionales.
